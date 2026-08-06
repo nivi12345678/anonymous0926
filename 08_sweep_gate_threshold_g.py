@@ -1,5 +1,5 @@
 """
-08_sweep_gate_threshold_g.py -- sweeps SG-DDF's gate threshold g on the
+sweep_gate_threshold_g.py -- sweeps SG-DDF's gate threshold g on the
 CORRECTED (8-wide chunked) engine, to find whether any g reopens the gate
 usefully now that spread is computed per-8-element-chunk instead of over
 the whole row.
