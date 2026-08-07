@@ -26,7 +26,7 @@ module softmax_unit #(
         else         $readmemh("exp_lut_stable.mem", exp_lut);
     end
     localparam signed [16:0] LO_SWAT=-17'sd1024, LO_STABLE=-17'sd2048;
-    localparam signed [15:0] GATE=16'sd3072;          // 12.0 in Q8.8
+    localparam signed [15:0] GATE=16'sd768;          // 3.0 in Q8.8
 
     reg [WIN*W-1:0] scores_r;  reg start_r;
     always @(posedge clk) begin
