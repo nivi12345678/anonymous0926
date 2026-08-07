@@ -60,7 +60,7 @@ module softmax_pipelined #(
             for (k=0;k<WIN;k=k+1) begin
                 sck = $signed(s1_scores[k*W +: W]);
                 if (MODE==2)      keepf = (sck >= thr);
-                else if (MODE==3) keepf = ((s1_max-s1_min) < 16'sd3072) ? 1'b1 : (sck >= thr);
+                else if (MODE==3) keepf = ((s1_max-s1_min) < 16'sd768) ? 1'b1 : (sck >= thr);
                 else              keepf = 1'b1;
                 if (keepf) begin
                     sh = (MODE==0)? {sck[15],sck} : ({sck[15],sck} - {s1_max[15],s1_max});
