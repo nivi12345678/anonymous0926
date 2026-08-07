@@ -19,7 +19,7 @@ module softmax_unit #(
     (* rom_style="distributed", dont_touch="true" *)
     reg [15:0] frac_lut [0:31];
     initial $readmemh("frac_lut32.mem", frac_lut);
-    localparam signed [15:0] GATE=16'sd3072;
+    localparam signed [15:0] GATE=16'sd768;
 
     reg [WIN*W-1:0] scores_r;  reg start_r;
     always @(posedge clk) begin
