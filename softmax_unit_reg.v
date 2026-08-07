@@ -20,7 +20,7 @@ module softmax_unit #(
     end
     localparam signed [31:0] LO_SWAT=-1024, LO_STABLE=-2048;
     localparam integer SPAN_SHIFT=11;
-    localparam signed [31:0] GATE=3072;   // 12.0 in Q8.8 (gate-sweep result)
+    localparam signed [31:0] GATE=768;   // 3.0 in Q8.8 (gate-sweep result)
 
     // ---- input registers ----
     reg [WIN*W-1:0] scores_r;  reg start_r;
